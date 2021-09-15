@@ -30,3 +30,16 @@ export const actions = {
     })
   })
 }
+
+export const getters = {
+  sortedTodos: (state) => {
+    const slicedTodos = state.todos.slice()
+    return slicedTodos.sort(function (a, b) {
+      if (a.created < b.created) {
+        return -1
+      } else {
+        return 1
+      }
+    })
+  }
+}

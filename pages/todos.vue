@@ -1,32 +1,8 @@
 <template>
   <section>
     <v-app>
-      <header>
-        <v-app-bar
-          color="primary lighten-2"
-          app
-        >
-          <v-app-bar-nav-icon />
-
-          <v-toolbar-title>Todo List</v-toolbar-title>
-
-          <v-spacer />
-
-          <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-          </v-btn>
-
-          <v-btn icon>
-            <v-icon>mdi-heart</v-icon>
-          </v-btn>
-
-          <v-btn icon>
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </v-app-bar>
-      </header>
       <main>
-        <div class="form mt-5">
+        <div class="form mx-16">
           <form @submit.prevent="add">
             <v-text-field
               v-model="name"
@@ -34,14 +10,12 @@
               label="Task"
               required
             />
-            <button>
-              <v-btn
-                class="mr-4"
-                @submit.prevent="add"
-              >
-                submit
-              </v-btn>
-            </button>
+            <v-btn
+              class="mb-5"
+              type="submit"
+            >
+              submit
+            </v-btn>
           </form>
           <!-- <form @submit.prevent="add">
             <input v-model="name" type="text">
@@ -53,6 +27,7 @@
                 v-if="todo.created"
                 max-width="600"
                 outlined
+                class="mb-3"
               >
                 <div class="task">
                   <div class="checkbox">
@@ -137,5 +112,9 @@ main{
 
 .remove{
   margin-left: auto;
+}
+
+ul > li {
+  list-style: none;
 }
 </style>
